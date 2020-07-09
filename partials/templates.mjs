@@ -14,7 +14,7 @@ export function template(component, iconConfigs){
         max-width: 100%;
         height: 100%;
         padding: 0;
-        outline-color: var(--cxd-img-icon--outline, rgba(255,255,255,0));
+        outline-color: var(--img-icon--outline, rgba(255,255,255,0));
       }
       
       ::slotted([slot="ii:fallback"]) {
@@ -26,19 +26,19 @@ export function template(component, iconConfigs){
       }
 
       .background-stop-color {
-        stop-color: var(--cxd-img-icon--base-color, ${BASE_ICON_COLOR});
+        stop-color: var(--img-icon--base-color, ${BASE_ICON_COLOR});
       }
 
       .background-color {
-        fill: var(--cxd-img-icon--base-color, ${BASE_ICON_COLOR});
+        fill: var(--img-icon--base-color, ${BASE_ICON_COLOR});
       }
 
       .foreground-color {
-        fill: var(--cxd-img-icon--color, ${ICON_COLOR});
+        fill: var(--img-icon--color, ${ICON_COLOR});
       }
 
       .foreground-stop-color {
-        stop-color: var(--cxd-img-icon--color, ${ICON_COLOR});
+        stop-color: var(--img-icon--color, ${ICON_COLOR});
       }
       .gradient {
         fill: url(#gradient);

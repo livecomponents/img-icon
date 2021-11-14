@@ -1,10 +1,10 @@
 {
   "name": "@live-components/img-icon",
-  "version": "1.0.1",
-  "description": "An HTML Web Component Icon",
+  "version": "1.2.7",
+  "description": "An HTML Web Component for Icons",
   "main": "img-icon.mjs",
   "scripts": {
-    "compress": "bread-compressor -a brotli ./partials/* && bread-compressor -a brotli img-icon.mjs && bread-compressor -a gzip img-icon.js",
+    "compress": "bread-compressor -a brotli ./*.mjs && bread-compressor -a brotli ./defaultIcons.json && bread-compressor -a gzip img-icon.js",
     "serve": "serve .",
     "start": "npm run compress && npm run serve",
     "test": "serve ."
@@ -23,9 +23,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bread-compressor-cli": "^1.0.8",
-    "cypress": "^4.0.2",
-    "serve": "^11.3.0"
+    "bread-compressor-cli": "^1.1.0",
+    "serve": "^13.0.2"
   },
   "dependencies": {},
   "directories": {

@@ -1,47 +1,71 @@
 - [Main documentation](../README.md)
 
 # Development
+
 ### Setup
+
 To initialize this component for all supported browsers, you must add scripts to the head of the document that point to their location on the CDN.
 
 #### Initialization HTML
+
 ```html
 <!-- OPTIONAL: preloaded dependency for a performance boost -->
-<link rel="preload" crossorigin href="https://unpkg.com/@live-components/img-icon@1.1.0/partials/iconConfigs.mjs" crossorigin as="script"/>
+<link
+  rel="preload"
+  crossorigin
+  href="https://unpkg.com/@live-components/img-icon@1.1.0/partials/iconConfigs.mjs"
+  crossorigin
+  as="script"
+/>
 
 <!-- REQUIRED: main module for modern Evergreen browsers  (Safari, Edge, Chrome, Mobile Safari, and Firefox) -->
-<script crossorigin type="module" src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.mjs"></script>
+<script
+  crossorigin
+  type="module"
+  src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.mjs"
+></script>
 
 <!-- OPTIONAL: fallback module if basic styling and function support for older browsers is needed (IE11) -->
-<script crossorigin nomodule type="text/javascript" src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.js"></script>
+<script
+  crossorigin
+  nomodule
+  type="text/javascript"
+  src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.js"
+></script>
 ```
 
 ### CSS Custom Properties (variables)
-The base color property is for the background color and color is the foreground.
 
-| **Variable Name** | **Default Value** |
-| --- | --- |
-| `--img-icon--base-color` | `#e0e0e0` |
-| `--img-icon--color` | `#fff` |
+The base properties for color ans sizing are listed below.
+
+| **Variable Name**           | **Default Value**        |
+| --------------------------- | ------------------------ |
+| `--img-icon--color`         | `currentColor`           |
+| `--img-icon--outline-color` | `rgba(255, 255, 255, 0)` |
+| `--img-icon--maxsize`       | `1rem`                   |
+| `--img-icon--color-action`  | `currentColor`           |
 
 ### Attributes
-| **Attribute Name** | **Default Value** | **Expected Value(s)** |
-| --- | --- | --- |
-| `fill`  | `0` | expected values are 0 - 100 representing the percentage of foreground color shown |
-| `shape` | `star` | expected values are listed in the '*Icon Shapes*' section |
+
+| **Attribute Name** | **Default Value** | **Expected Value(s)**                                                                                                                                                                                                                                  |
+| ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `accessible`       | `""`              | when the component has accessibility properties this attribute should be set to 'true'. Internally it will set the SVG to have `aria-hidden` attribute with a value of 'true'. Do not use this attribute if you do not want the icon to be accessible. |
+| `a11y-label`       | `""`              | when this attribute is set the SVG is assigned a `aria-label` attribute with the value of `a11y-label`. Do not use this attribute if you do not want the icon to have an accessible label.                                                             |
+| `desc`             | `""`              | this attribute value becomes the the inner text for the SVG `<desc>` tag (if a value is present). Do not use this attribute if you do not want the icon to have this tag.                                                                              |
+| `icon-set`         | `null`            | JSON object with '_icons_' and '_viewBox_' values                                                                                                                                                                                                      |
+| `shape`            | `star`            | expected values are listed in the '_Icon Shapes_' section                                                                                                                                                                                              |
+| `title`            | `""`              | this attribute value becomes the the inner text for the SVG `<title>` tag (if a value is present). Do not use this attribute if you do not want the icon to have this tag.                                                                             |
 
 ### Slots
-| **name** | **summary** | **type** | **SEO Requirement** |
-| --- | --- | --- | --- |
-| `ii:fallback` | basic fallback image in case of errors and/or component failure | static |  ❌ |
- <!-- ✅ ❌ -->
+
+None
 
 ### Custom Event Hooks
-| **name** | **detail data** | **summary** |
-| --- | --- | --- |
-| `ph:userchange` | `{ userIsLoggedIn: boolean, userName: string }` | triggers when user name is updated |
+
+None
 
 ## Fallback Dependencies
+
 These are the dependencies for the optional `nomodule` script.
 | **name** | **location** | **Override** | **swappable** |
 | --- | --- | --- | --- |
@@ -50,11 +74,13 @@ These are the dependencies for the optional `nomodule` script.
 ## Customization
 
 ### Icon Shapes (based on Material Icons)
-arrowDown, arrowLeft, arrowRight, arrowUp, addPhoto, alertCircle, alertTriangle, bell, bullhorn, car, chat, chatWithStar, chevronUp, chevronDown, chevronLeft, chevronRight, checkmark, checkmarkCircle, checkmarkCircleOutline, clipboard, clock, close, cloudUp, creditCard, dashboard, description, directions, dotsVertical, download, earth, email, emailOutline, fileCSV, listCurled, filter, flag, fullscreen, fullscreenExit, heart, heartOutline, helpCircle, helpCircleOutline, home, infoCircle, infoCircleOutline, lock, location, menu, mobilePhone, money, minus, pencil, plus, phone, photoCollection, print, reply, replyAll, rotateLeft, rotateRight, save, search, star, starHalf, starOutline, shieldCheckmark, tools, trash, triangleArrowDown, triangleArrowUp, upload, userCircle, visibilityHide, visibilityShow, wrench, zoomIn, zoomOut
+
+arrowDown, arrowLeft, arrowRight, arrowUp, addPhoto, alertCircle, alertTriangle, bell, bullhorn, car, chat, chevronUp, chevronDown, chevronLeft, chevronRight, checkmark, checkmarkCircle, checkmarkCircleOutline, clipboard, clock, close, cloudUp, creditCard, dashboard, description, directions, dotsVertical, download, earth, email, emailOutline, fileCSV, listCurled, filter, flag, fullscreen, fullscreenExit, heart, heartOutline, helpCircle, helpCircleOutline, home, infoCircle, infoCircleOutline, lock, location, menu, mobilePhone, money, minus, pencil, plus, phone, photoCollection, print, reply, replyAll, rotateLeft, rotateRight, save, search, star, starHalf, starOutline, shieldCheckmark, tools, trash, triangleArrowDown, triangleArrowUp, upload, userCircle, visibilityHide, visibilityShow, wrench, zoomIn, zoomOut
 
 ## NPM Scripts
-| **command** | **summary** |
-| --- | --- |
+
+| **command**        | **summary**                                                                                                                 |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------- |
 | `npm run compress` | handles compression. The main file is compressed to brotli and the fallback file (or 'nomodule' file) is compressed to gzip |
-| `npm run test` | runs unit tests | 
-| `npm run start` | runs an dev server to test the component (port 5000) |
+| `npm run test`     | runs unit tests                                                                                                             |
+| `npm run start`    | runs an dev server to test the component (port 5000)                                                                        |

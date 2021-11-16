@@ -4,7 +4,7 @@
   "description": "An HTML Web Component for Icons",
   "main": "img-icon.mjs",
   "scripts": {
-    "compress": "bread-compressor -a brotli ./*.mjs && bread-compressor -a brotli ./defaultIcons.json && bread-compressor -a gzip img-icon.js",
+    "compress": "bread-compressor -a brotli ./*.mjs && bread-compressor -a gzip img-icon.js",
     "serve": "serve .",
     "start": "npm run compress && npm run serve",
     "test": "serve ."

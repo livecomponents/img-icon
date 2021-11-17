@@ -13,7 +13,7 @@ To initialize this component for all supported browsers, you must add scripts to
 <script
   crossorigin
   type="module"
-  src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.mjs"
+  src="https://unpkg.com/@live-components/img-icon/img-icon.js"
 ></script>
 
 <!-- OPTIONAL: fallback module if basic styling and function support for older browsers is needed (IE11) -->
@@ -21,7 +21,7 @@ To initialize this component for all supported browsers, you must add scripts to
   crossorigin
   nomodule
   type="text/javascript"
-  src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.js"
+  src="https://unpkg.com/@live-components/img-icon@1.0.0/img-icon.nomodule.js"
 ></script>
 ```
 
@@ -38,14 +38,13 @@ The base properties for color ans sizing are listed below.
 
 ### Attributes
 
-| **Attribute Name** | **Default Value** | **Expected Value(s)**                                                                                                                                                                                                                                  |
-| ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `accessible`       | `""`              | when the component has accessibility properties this attribute should be set to 'true'. Internally it will set the SVG to have `aria-hidden` attribute with a value of 'true'. Do not use this attribute if you do not want the icon to be accessible. |
-| `a11y-label`       | `""`              | when this attribute is set the SVG is assigned a `aria-label` attribute with the value of `a11y-label`. Do not use this attribute if you do not want the icon to have an accessible label.                                                             |
-| `desc`             | `""`              | this attribute value becomes the the inner text for the SVG `<desc>` tag (if a value is present). Do not use this attribute if you do not want the icon to have this tag.                                                                              |
-| `icon-set`         | `null`            | JSON object with '_icons_' and '_viewBox_' values                                                                                                                                                                                                      |
-| `shape`            | `star`            | expected values are listed in the '_Icon Shapes_' section                                                                                                                                                                                              |
-| `title`            | `""`              | this attribute value becomes the the inner text for the SVG `<title>` tag (if a value is present). Do not use this attribute if you do not want the icon to have this tag.                                                                             |
+| **Attribute Name** | **Default Value** | **Expected Value(s)** | ------------------ | ----------------- | ----- |
+| `accessible` | `""` | when the component has accessibility properties this attribute should be set to 'true'. Internally it will set the SVG to have `aria-hidden` attribute with a value of 'true'. Do not use this attribute if you do not want the icon to be accessible. |
+| `a11y-label` | `""` | when this attribute is set the SVG is assigned a `aria-label` attribute with the value of `a11y-label`. Do not use this attribute if you do not want the icon to have an accessible label. |
+| `desc` | `""` | this attribute value becomes the the inner text for the SVG `<desc>` tag (if a value is present). Do not use this attribute if you do not want the icon to have this tag. |
+| `icon-set` | `null` | JSON object with '_icons_' and '_viewBox_' values |
+| `shape` | `star` | expected values are listed in the '_Icon Shapes_' section |
+| `title` | `""` | this attribute value becomes the the inner text for the SVG `<title>` tag (if a value is present). Do not use this attribute if you do not want the icon to have this tag. |
 
 ### Slots
 
@@ -70,8 +69,6 @@ arrowDown, arrowLeft, arrowRight, arrowUp, addPhoto, alertCircle, alertTriangle,
 
 ## NPM Scripts
 
-| **command**        | **summary**                                                                                                                 |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `npm run compress` | handles compression. The main file is compressed to brotli and the fallback file (or 'nomodule' file) is compressed to gzip |
-| `npm run test`     | runs unit tests                                                                                                             |
-| `npm run start`    | runs an dev server to test the component (port 5000)                                                                        |
+| **command**     | **summary**                                          |
+| --------------- | ---------------------------------------------------- |
+| `npm run start` | runs an dev server to test the component (port 5000) |

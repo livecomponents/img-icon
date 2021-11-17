@@ -2,12 +2,10 @@
   "name": "@live-components/img-icon",
   "version": "1.2.7",
   "description": "An HTML Web Component for Icons",
-  "main": "img-icon.mjs",
+  "main": "img-icon.js",
   "scripts": {
-    "compress": "bread-compressor -a brotli ./*.mjs && bread-compressor -a gzip img-icon.js",
     "serve": "serve .",
-    "start": "npm run compress && npm run serve",
-    "test": "serve ."
+    "start": "npm run serve"
   },
   "author": "Erik Isaksen <nevraeka@gmail.com>",
   "keywords": [
@@ -23,7 +21,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "bread-compressor-cli": "^1.1.0",
     "serve": "^13.0.2"
   },
   "dependencies": {},

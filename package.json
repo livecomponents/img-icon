@@ -3,6 +3,7 @@
   "version": "1.2.7",
   "description": "An HTML Web Component for Icons",
   "main": "img-icon.js",
+  "type": "module",
   "scripts": {
     "serve": "serve .",
     "start": "npm run serve"

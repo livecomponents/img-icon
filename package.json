@@ -1,6 +1,6 @@
 {
   "name": "@live-components/img-icon",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "An HTML Web Component for Icons",
   "main": "img-icon.js",
   "type": "module",
